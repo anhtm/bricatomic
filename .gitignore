@@ -1,10 +1,9 @@
 # System and IDE files
 Thumbs.db
 .DS_Store
-.idea
-*.suo
-*.sublime-project
-*.sublime-workspace
+
+# Editor
+.vscode/
 
 # Vendors
 node_modules/

@@ -1,22 +1,21 @@
-import Phaser from "phaser";
-import React from "react";
-import ReactDOM from "react-dom";
-import App from "./components/App.jsx";
-import playGame from "./phaser/scene";
+/* eslint-disable react/jsx-filename-extension */
+import Phaser from 'phaser';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+import playGame from './phaser/scene';
 
-//console.log(App);
-
-export const config = {
+const config = {
   type: Phaser.AUTO,
-  parent: "phaser",
+  parent: 'phaser',
   width: 800,
   height: 600,
-  scene: playGame
+  scene: playGame,
 };
 
 const game = new Phaser.Game(config);
 
 ReactDOM.render(
   <App />,
-  document.getElementById("root") || document.createElement("div")
+  document.getElementById('root') || document.createElement('div'),
 );

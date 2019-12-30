@@ -1,24 +1,24 @@
 {
-  "name": "phaser3-project-template",
-  "version": "1.1.0",
-  "description": "A Phaser 3 Project Template",
+  "name": "bricatomic",
+  "version": "1.0.0",
+  "description": "An Isometric Lego Building Platform",
   "main": "src/index.js",
   "scripts": {
     "build": "webpack --config webpack/prod.js ",
-    "start": "webpack-dev-server --config webpack/base.js --open",
+    "start": "webpack-dev-server --config webpack/webpack.config.babel.js --open",
     "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/photonstorm/phaser3-project-template.git"
   },
-  "author": "Taylor Nodell and Richard Davey <rdavey@gmail.com> (http://www.photonstorm.com)",
+  "author": "Minh Anh Trinh <anhtm.mtl@gmail.com>",
   "license": "MIT",
   "licenseUrl": "http://www.opensource.org/licenses/mit-license.php",
   "bugs": {
-    "url": "https://github.com/photonstorm/phaser3-project-template/issues"
+    "url": "https://github.com/anhtm/bricatomic/issues"
   },
-  "homepage": "https://github.com/photonstorm/phaser3-project-template#readme",
+  "homepage": "https://github.com/anhtm/bricatomic",
   "devDependencies": {
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
@@ -28,31 +28,37 @@
     "babel-jest": "^24.7.1",
     "babel-loader": "^8.0.5",
     "canvas": "^2.5.0",
-    "clean-webpack-plugin": "^3.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
     "file-loader": "^4.2.0",
-    "html-webpack-plugin": "^3.2.0",
     "jest": "^24.7.1",
     "jest-canvas-mock": "^2.1.0",
     "path": "^0.12.7",
     "raw-loader": "^3.1.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "terser-webpack-plugin": "^2.1.0",
-    "webpack": "^4.28.3",
     "webpack-cli": "^3.2.1",
-    "webpack-dev-server": "^3.1.14",
-    "webpack-merge": "^4.2.1"
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
+    "html-webpack-plugin": "^3.2.0",
     "phaser": "^3.17.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-redux": "^7.0.2",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "style-loader": "^1.0.0"
+    "terser-webpack-plugin": "^2.3.1",
+    "style-loader": "^1.0.0",
+    "webpack": "^4.28.3",
+    "webpack-merge": "^4.2.1"
   },
   "jest": {
     "transform": {
@@ -68,6 +74,80 @@
     "moduleNameMapper": {
       "\\.(css|less|sass|scss)$": "<rootDir>/test/mocks/styleMock.js",
       "\\.(gif|ttf|eot|svg|png)$": "<rootDir>/test/mocks/fileMock.js"
+    }
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    },
+    "extends": "airbnb",
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "react"
+    ],
+    "rules": {
+      "func-names": "off",
+      "no-underscore-dangle": [
+        "warn",
+        {
+          "allowAfterThis": true
+        }
+      ],
+      "comma-dangle": [
+        "error",
+        "always-multiline"
+      ],
+      "strict": [
+        "error",
+        "safe"
+      ],
+      "max-len": [
+        "error",
+        120,
+        2
+      ],
+      "arrow-parens": [
+        "error",
+        "always"
+      ],
+      "arrow-body-style": [
+        "error",
+        "as-needed",
+        {
+          "requireReturnForObjectLiteral": true
+        }
+      ],
+      "newline-per-chained-call": [
+        "error"
+      ],
+      "nonblock-statement-body-position": [
+        "error",
+        "below"
+      ],
+      "no-empty-function": [
+        "error",
+        {
+          "allow": [
+            "constructors"
+          ]
+        }
+      ],
+      "curly": [
+        "error",
+        "all"
+      ]
     }
   }
 }
